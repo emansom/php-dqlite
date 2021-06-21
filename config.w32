@@ -1,0 +1,7 @@
+ARG_ENABLE('dqlite', 'dqlite support', 'no');
+
+if (PHP_DQLITE != 'no') {
+	AC_DEFINE('HAVE_DQLITE', 1, 'dqlite support enabled');
+
+	EXTENSION('dqlite', 'dqlite.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
